@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Cœurs</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #hearts {
+            font-size: 2rem;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulateur de Cœurs ❤️</h1>
+    <div id="hearts">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</div>
+    <button onclick="removeHeart()">Enlever un cœur</button>
+    <button onclick="addHeart()">Ajouter un cœur</button>
+
+    <script>
+        let maxHearts = 10;
+        function removeHeart() {
+            let heartsDiv = document.getElementById("hearts");
+            let hearts = heartsDiv.innerText;
+            if (hearts.length > 0) {
+                heartsDiv.innerText = hearts.slice(0, -2);
+            }
+        }
+        
+        function addHeart() {
+            let heartsDiv = document.getElementById("hearts");
+            let hearts = heartsDiv.innerText;
+            if (hearts.length / 2 < maxHearts) {
+                heartsDiv.innerText += "❤️";
+            }
+        }
+    </script>
+</body>
+</html>
