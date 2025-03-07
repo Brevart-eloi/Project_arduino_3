@@ -8,23 +8,51 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #d63384;
         }
         #hearts {
-            font-size: 2rem;
+            font-size: 3rem;
+            margin: 20px 0;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
         }
         button {
-            margin: 10px;
+            background-color: #ff477e;
+            color: white;
+            border: none;
             padding: 10px 20px;
             font-size: 1rem;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #d63384;
         }
     </style>
 </head>
 <body>
     <h1>Simulateur de Cœurs ❤️</h1>
     <div id="hearts">❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</div>
-    <button onclick="removeHeart()">Enlever un cœur</button>
-    <button onclick="addHeart()">Ajouter un cœur</button>
+    <div class="buttons">
+        <button onclick="removeHeart()">Enlever un cœur</button>
+        <button onclick="addHeart()">Ajouter un cœur</button>
+    </div>
 
     <script>
         let maxHearts = 10;
